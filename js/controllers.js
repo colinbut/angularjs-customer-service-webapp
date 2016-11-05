@@ -1,3 +1,5 @@
+var customerControllers = angular.module('customerControllers', []);
+
 customerControllers.controller('CustomerController', ['$scope',
   function CustomerController($scope) {
 
@@ -13,12 +15,12 @@ customerControllers.controller('CustomerController', ['$scope',
 
   }]);
 
-customerControllers.controller('AddCustomerController', ['$scope', '$location'
+customerControllers.controller('AddCustomerController', ['$scope', '$location',
   function AddCustomerController($scope, $location) {
       $scope.addNewCustomer = function() {
         $location.path('/addedCustomer/' + $scope.cName + "/" + $scope.cNumber
         + "/" + $scope.cCity);
-      }
+      };
   }
 ]);
 
