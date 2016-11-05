@@ -16,7 +16,17 @@ customerControllers.controller('CustomerController', ['$scope',
 customerControllers.controller('AddCustomerController', ['$scope', '$location'
   function AddCustomerController($scope, $location) {
       $scope.addNewCustomer = function() {
-        $location.path('/addedCustomer/' + $scope.cName + "/" + $scope.cCity);
+        $location.path('/addedCustomer/' + $scope.cName + "/" + $scope.cNumber
+        + "/" + $scope.cCity);
       }
+  }
+]);
+
+
+customerControllers.controller('AddedCustomerController', ['$scope', '$routeParams',
+  function AddedCustomerController($scope, $routeParams) {
+      $scope.customerName = $routeParams.customer;
+      $scope.customerNumber = $routeParams.customerNumber;
+      $scope.customerCity = $routeParams.customerCity;
   }
 ]);
