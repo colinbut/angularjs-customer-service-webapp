@@ -12,3 +12,11 @@ customerControllers.controller('CustomerController', ['$scope',
     }
 
   }]);
+
+customerControllers.controller('AddCustomerController', ['$scope', '$location'
+  function AddCustomerController($scope, $location) {
+      $scope.addNewCustomer = function() {
+        $location.path('/addedCustomer/' + $scope.cName + "/" + $scope.cCity);
+      }
+  }
+]);
